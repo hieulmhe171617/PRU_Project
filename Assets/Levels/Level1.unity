@@ -7264,11 +7264,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679776266587160585, guid: cfb4d77e29543bf449adbd7ad52123f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.14
+      value: -1.48
       objectReference: {fileID: 0}
     - target: {fileID: 3679776266587160585, guid: cfb4d77e29543bf449adbd7ad52123f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.99
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 3679776266587160585, guid: cfb4d77e29543bf449adbd7ad52123f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7598,6 +7598,10 @@ PrefabInstance:
       propertyPath: 'fireballs.Array.data[9]'
       value: 
       objectReference: {fileID: 1111099727}
+    - target: {fileID: 7140436128096720934, guid: 53ad95a70c491de4daf1d30430f9ce1b, type: 3}
+      propertyPath: startingHealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7140436128096720934, guid: 53ad95a70c491de4daf1d30430f9ce1b, type: 3}
       propertyPath: iFramesDuration
       value: 3

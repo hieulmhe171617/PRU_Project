@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
-        //if (invulnerable) return;
+        if (invulnerable) return;
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         if (currentHealth > 0)
         {
@@ -59,7 +59,9 @@ public class Health : MonoBehaviour
 
     private IEnumerator Invunerability()
     {
-        //invulnerable = true;
+        invulnerable = true;
+        //cần invulnerble ở đây bởi vì hiệu ứng chém của enemy đang vẽ bằng boxcast, ko phải collider của
+        //enemy -> ko phát hiện được collion của 8 player và 9 enemy
         Physics2D.IgnoreLayerCollision(8, 9, true);
         //khong bi thuong
 
@@ -71,7 +73,7 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
         }
         Physics2D.IgnoreLayerCollision(8, 9, false);
-        //invulnerable = false;
+        invulnerable = false;
     }
 
     private void Deactivate()

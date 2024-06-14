@@ -13,7 +13,7 @@ public class MeleeEnemy : MonoBehaviour
 
     [Header("Player Layer")]
     [SerializeField] private LayerMask playerLayer;
-    private float cooldownTimer = Mathf.Infinity;
+    private float cooldownTimer = 0; //Mathf.Infinity;
 
     //ref
     private Animator anim;
@@ -27,7 +27,7 @@ public class MeleeEnemy : MonoBehaviour
 
     private void Update()
     {
-        cooldownTimer += Time.time;
+        cooldownTimer += Time.deltaTime;
         //attack only when player in sight?
         if (PlayerInsight())
         {
@@ -68,6 +68,7 @@ public class MeleeEnemy : MonoBehaviour
         {
             //damage player Health
             playerHealth.TakeDamage(damage);
+            Debug.Log("Nguoi choi bi tan cong");
         }
     }
 }
