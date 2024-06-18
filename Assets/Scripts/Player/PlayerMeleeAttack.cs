@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MeleeEnemy : MonoBehaviour
+public class PlayerMeleeAttack : MonoBehaviour
 {
     [Header("Attack Parameters")]
     [SerializeField] private float attackCooldown;
@@ -11,50 +11,42 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
 
-    [Header("Player Layer")]
-    [SerializeField] private LayerMask playerLayer;
+    [Header("Enemy Layer")]
+    [SerializeField] private LayerMask enemyLayer;
     private float cooldownTimer = 0; //Mathf.Infinity;
 
     [Header("Attack Sound")]
     [SerializeField] private AudioClip attackSound;
 
-    //ref
     private Animator anim;
-    private Health playerHealth;
-    private EnemyPatrol enemyPatrol;
+    private Health enemyHealth;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
     private void Update()
     {
         cooldownTimer += Time.deltaTime;
-        //attack only when player in sight?
-        if (PlayerInsight())
+        if (Input.GetKeyDown(KeyCode.Q) && cooldownTimer >= attackCooldown)
         {
-            if (cooldownTimer >= attackCooldown && playerHealth.currentHealth > 0)
-            {
-                //attack
-                cooldownTimer = 0;
-                anim.SetTrigger("meleeAttack");
-                SoundManager.instance.PlaySound(attackSound);
-            }
+            //co the attack
+            cooldownTimer = 0;
+            anim.SetTrigger("attack2");
+            DamageEnemy();
         }
-
-        if (enemyPatrol != null)
-            enemyPatrol.enabled = !PlayerInsight();
     }
 
-    private bool PlayerInsight()
+
+    private bool EnemyInsight()
     {
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance
             , new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z)
-            , 0, Vector2.left, 0, playerLayer);
-        if (hit.collider != null && hit.transform.gameObject.tag == "Player")
+            , 0, Vector2.left, 0, enemyLayer);
+        if (hit.collider != null && hit.transform.gameObject.tag == "Enemy")
         {
-            playerHealth = hit.transform.GetComponent<Health>();
+            enemyHealth = hit.transform.GetComponent<Health>();
         }
         return hit.collider != null;
     }
@@ -66,13 +58,15 @@ public class MeleeEnemy : MonoBehaviour
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
-    private void DamagePlayer() //event trong animation meleeAttack
+
+    private void DamageEnemy() //event trong animation meleeAttack
     {
-        if (PlayerInsight())
+        if (EnemyInsight())
         {
             //damage player Health
-            playerHealth.TakeDamage(damage);
-            //Debug.Log("Nguoi choi bi tan cong");
+            SoundManager.instance.PlaySound(attackSound);
+            enemyHealth.TakeDamage(damage);
+            //Debug.Log("Da tan cong");
         }
     }
 }

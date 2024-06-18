@@ -16,6 +16,12 @@ public class Health : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private Behaviour[] components;
+
+
+    [Header("Death Sound")]
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip hurtSound;
+
     private bool invulnerable;
     private void Awake()
     {
@@ -34,19 +40,24 @@ public class Health : MonoBehaviour
             anim.SetTrigger("hurt");
             //iframes
             StartCoroutine(Invunerability());
+            SoundManager.instance.PlaySound(hurtSound);
         }
         else
         {
             if (!dead)
-            {
-                //player dead
-                anim.SetTrigger("die");
+            { 
                 //deactive all attached components class
                 foreach (Behaviour component in components)
                 {
                     component.enabled = false;
                 }
+                if (gameObject.tag == "Player")
+                {
+                    anim.SetBool("grounded", true);
+                }
+                anim.SetTrigger("die");
                 dead = true;
+                SoundManager.instance.PlaySound(deathSound);
             }
 
         }

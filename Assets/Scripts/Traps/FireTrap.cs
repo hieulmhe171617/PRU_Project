@@ -10,6 +10,11 @@ public class FireTrap : MonoBehaviour
     [SerializeField] private float activationDelay;
     [SerializeField] private float activeTime;
 
+
+    //sound
+    [Header("SFX")]
+    [SerializeField] private AudioClip fireTrapSound;
+
     private Animator anim;
     private SpriteRenderer spriteRend;
     private bool triggered; //when the trap gets triggered
@@ -64,6 +69,7 @@ public class FireTrap : MonoBehaviour
 
         //wait for delay, active trap, turn on animation, return color back to normal
         yield return new WaitForSeconds(activationDelay);
+        SoundManager.instance.PlaySound(fireTrapSound);
         spriteRend.color = Color.white;
         active = true;
         anim.SetBool("activated", true);
