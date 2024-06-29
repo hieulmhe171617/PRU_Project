@@ -3,14 +3,21 @@ using UnityEngine.SceneManagement;
 
 public class LoadingManager : MonoBehaviour
 {
-    
-    void Update()
+    int sceneIndex;
+    int lastScenceIndex;
+
+    private void Awake()
     {
-        //just for test change scenne 
-        if (Input.GetKeyDown(KeyCode.F))
+        lastScenceIndex = SceneManager.sceneCountInBuildSettings - 1;
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public void GoToNextScene()
+    {
+        if (sceneIndex <= lastScenceIndex)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(++sceneIndex);
         }
-        //after inject code logic change scene here
+
     }
 }

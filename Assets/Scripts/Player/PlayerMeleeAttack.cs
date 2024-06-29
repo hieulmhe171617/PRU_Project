@@ -20,10 +20,11 @@ public class PlayerMeleeAttack : MonoBehaviour
 
     private Animator anim;
     private Health enemyHealth;
-
+    private Health playerHealth;
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        playerHealth = GetComponent<Health>();
     }
 
     private void Update()
@@ -66,6 +67,7 @@ public class PlayerMeleeAttack : MonoBehaviour
             //damage player Health
             SoundManager.instance.PlaySound(attackSound);
             enemyHealth.TakeDamage(damage);
+            playerHealth.AddHealth(0.5f);
             //Debug.Log("Da tan cong");
         }
     }
