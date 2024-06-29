@@ -34,7 +34,7 @@ public class RangedEnemy : MonoBehaviour
     }
     private void Update()
     {
-        cooldownTimer += Time.time;
+        cooldownTimer += Time.deltaTime;
         //attack only when player in sight?
         if (PlayerInsight())
         {
