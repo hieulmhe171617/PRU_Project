@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         //kiem tra xem chuot trai co duoc click khong
-        if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.CanAttack())
+        if (Input.GetKeyDown(KeyCode.W) && cooldownTimer > attackCooldown && playerMovement.CanAttack())
         {
             Attack();
         }

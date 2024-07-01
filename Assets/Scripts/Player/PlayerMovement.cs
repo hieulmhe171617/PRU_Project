@@ -78,7 +78,8 @@ public class PlayerMovement : MonoBehaviour
         {
             body.gravityScale = 0;
             body.velocity = Vector2.zero;
-        }else
+        }
+        else
         {
             body.gravityScale = 7;
             body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
@@ -87,7 +88,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 coyoteCounter = coyoteTime; //reset coyote counter when on the ground
                 jumpCounter = extraJumps; //reset extra jump when on ground
-            } else
+            }
+            else
             {
                 coyoteCounter -= Time.deltaTime; //start decreasing coyote counter when not on the ground
             }
@@ -96,12 +98,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (coyoteCounter <= 0 && !OnWall() && jumpCounter <= 0) return; 
+        if (coyoteCounter <= 0 && !OnWall() && jumpCounter <= 0) return;
         //if coyote counter is <= 0 and not on the wall and don't have extra jump don't do anything
         SoundManager.instance.PlaySound(jumpSound);
 
         if (OnWall())
+        {
             WallJump();
+        }
+
         else
         {
             if (IsGrounded())

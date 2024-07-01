@@ -37,7 +37,14 @@ public class Projectile : MonoBehaviour
 
         if (collision.tag == "Enemy")
         {
-            collision.GetComponent<Health>().TakeDamage(1);
+            Health h = collision.GetComponent<Health>();
+            if(h != null)
+            {
+                collision.GetComponent<Health>().TakeDamage(1);
+            }
+        } else if (collision.tag == "Box")
+        {
+            Destroy(collision.gameObject);
         }
     }
 
