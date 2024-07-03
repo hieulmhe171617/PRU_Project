@@ -52100,6 +52100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box
       objectReference: {fileID: 0}
+    - target: {fileID: 4612633691136657936, guid: 1f78d0b2c1b6dff4dbf58f7d38e5a41f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -56047,6 +56051,10 @@ PrefabInstance:
     - target: {fileID: 4612633691136657936, guid: 1f78d0b2c1b6dff4dbf58f7d38e5a41f, type: 3}
       propertyPath: m_Name
       value: Box (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612633691136657936, guid: 1f78d0b2c1b6dff4dbf58f7d38e5a41f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
