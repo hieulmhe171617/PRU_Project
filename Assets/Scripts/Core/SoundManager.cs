@@ -3,9 +3,11 @@ using UnityEngine;
 public class SoundManager : Singleton<SoundManager>
 {
     public static SoundManager instance {  get; private set; }
-    private AudioSource source;
+    public AudioSource source;
 
     public AudioSource musicSound;
+
+    
 
     private void Awake()
     {
@@ -19,6 +21,8 @@ public class SoundManager : Singleton<SoundManager>
         {
             Destroy(gameObject);
         }
+        PlayerPrefs.SetFloat("musicSound", PlayerPrefs.GetFloat("musicSound"));
+        PlayerPrefs.SetFloat("effectSound", PlayerPrefs.GetFloat("effectSound"));
     }
 
     public void PlaySound(AudioClip _sound)
@@ -32,9 +36,12 @@ public class SoundManager : Singleton<SoundManager>
     public void SetVolumeSource(float value)
     {
         source.volume = value;
+        PlayerPrefs.SetFloat("musicSound", value);
     }
     public void SetVolumeMusic(float value)
     {
         musicSound.volume = value;
+        PlayerPrefs.SetFloat("effectSound", value);
     }
+
 }

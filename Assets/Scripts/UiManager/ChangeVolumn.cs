@@ -7,6 +7,17 @@ public class ChangeVolumn : MonoBehaviour
 
     public Slider musicSound;
     public Slider effectSound;
+    private void Start()
+    {
+        if (musicSound)
+        {
+            musicSound.value = PlayerPrefs.GetFloat("musicSound");
+        }
+        if (effectSound)
+        {
+            effectSound.value = PlayerPrefs.GetFloat("effectSound");
+        }
+    }
     void Update()
     {
         if (musicSound)
