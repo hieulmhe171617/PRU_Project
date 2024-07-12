@@ -7,8 +7,6 @@ public class SoundManager : Singleton<SoundManager>
 
     public AudioSource musicSound;
 
-    
-
     private void Awake()
     {
         source = GetComponent<AudioSource>();

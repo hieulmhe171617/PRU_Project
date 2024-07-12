@@ -1187,6 +1187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePannel: {fileID: 785782300}
+  player: {fileID: 474973020}
+  gameOverPannel: {fileID: 1961571354}
+  pauseButton: {fileID: 780999246}
 --- !u!4 &343119324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 219011924518043481, guid: c0fe2b77f7ed8854f89cf7c77ec7d203, type: 3}
@@ -2874,7 +2877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21.597107, y: -68.31674}
+  m_AnchoredPosition: {x: 21.597168, y: -68.31677}
   m_SizeDelta: {x: -215.9709, y: -283.8035}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &713559755
@@ -3635,7 +3638,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21.597107, y: -68.31674}
+  m_AnchoredPosition: {x: 21.597168, y: -68.31677}
   m_SizeDelta: {x: -215.9709, y: -283.8035}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &785782302

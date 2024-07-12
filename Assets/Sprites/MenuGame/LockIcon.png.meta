@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 596a2ff6671e079409c4506d87e50f03
+guid: a7a72a3716795434b9b533edd4839235
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4678403333905409985
-    second: Lovepik_com-400322728-music-icon_0
+      213: 2084703607412047440
+    second: toppng.com-yellow-lock-icon-yellow-lock-transparent-icon-436x543_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +84,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
+    buildTarget: Win64
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -98,6 +98,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lovepik_com-400322728-music-icon_0
+      name: toppng.com-yellow-lock-icon-yellow-lock-transparent-icon-436x543_0
       rect:
         serializedVersion: 2
-        x: 172
-        y: 187
-        width: 579
-        height: 579
+        x: 0
+        y: 0
+        width: 686
+        height: 854
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1c76f618b070de040800000000000000
-      internalID: 4678403333905409985
+      spriteID: 05e35cdb2ea5eec10800000000000000
+      internalID: 2084703607412047440
       vertices: []
       indices: 
       edges: []
@@ -151,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -159,7 +172,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Lovepik_com-400322728-music-icon_0: 4678403333905409985
+      toppng.com-yellow-lock-icon-yellow-lock-transparent-icon-436x543_0: 2084703607412047440
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
