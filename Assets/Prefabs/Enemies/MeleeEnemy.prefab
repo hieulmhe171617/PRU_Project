@@ -79,7 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 591350849
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 84ce2f114ad12bd4ebafc77060220324, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -198,7 +198,7 @@ MonoBehaviour:
   boxCollider: {fileID: 3849394343521111813}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   attackSound: {fileID: 8300000, guid: 2d02c566ee84b434ba192f1721ad5fba, type: 3}
 --- !u!114 &3190142013433154075
 MonoBehaviour:

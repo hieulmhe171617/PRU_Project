@@ -457,7 +457,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bamboo-doorv2_0: 4177139701754650154
+      bamboo-doorv2_1: 4334334957383115312
+      bamboo-doorv2_10: 425684737216465786
+      bamboo-doorv2_11: 1161183662787259354
+      bamboo-doorv2_12: 4654257268526183630
+      bamboo-doorv2_13: -3339145465217120709
+      bamboo-doorv2_2: 5193734415488445843
+      bamboo-doorv2_3: -2206821014160873067
+      bamboo-doorv2_4: -5132666733999720475
+      bamboo-doorv2_5: 1194126416483033483
+      bamboo-doorv2_6: -3761069779394286418
+      bamboo-doorv2_7: 4599174781076142393
+      bamboo-doorv2_8: 5241350131248559959
+      bamboo-doorv2_9: 2564272671300596383
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

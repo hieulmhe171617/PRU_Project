@@ -132,7 +132,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hocbong_0: -148898450889695283
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
