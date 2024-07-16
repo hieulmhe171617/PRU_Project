@@ -9,6 +9,8 @@ TagManager:
   - Box
   - Door
   - Checkpoint
+  - Boss
+
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Wall
   - Player
   - Enemy
-  - 
+  - Boss
   - 
   - 
   - 

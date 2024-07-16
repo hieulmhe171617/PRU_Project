@@ -67,7 +67,10 @@ public class PlayerMeleeAttack : MonoBehaviour
             //damage player Health
             SoundManager.instance.PlaySound(attackSound);
             enemyHealth.TakeDamage(damage);
-            playerHealth.AddHealth(0.5f);
+            if (playerHealth.currentHealth > 0)
+            {
+                playerHealth.AddHealth(0.5f);
+            }
             //Debug.Log("Da tan cong");
         }
     }

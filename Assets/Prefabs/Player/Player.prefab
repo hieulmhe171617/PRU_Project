@@ -291,6 +291,7 @@ MonoBehaviour:
   components:
   - {fileID: 360339311909394714}
   - {fileID: 1723272551134101423}
+  - {fileID: 5289208432362177421}
   deathSound: {fileID: 8300000, guid: b28ef39759f395b4ebe913605a86cfef, type: 3}
   hurtSound: {fileID: 0}
 --- !u!114 &5289208432362177421
