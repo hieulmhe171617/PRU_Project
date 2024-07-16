@@ -52,4 +52,13 @@ public class PlayerAttack : MonoBehaviour
         }
         return 0;
     }
+
+    public float GetStartAttackCooldown() => attackCooldown;
+
+    public void NewAttackCooldown(float newAttackCooldown)
+    {
+        attackCooldown = newAttackCooldown;
+    }
+
+
 }
