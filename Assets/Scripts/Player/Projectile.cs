@@ -45,6 +45,9 @@ public class Projectile : MonoBehaviour
         } else if (collision.tag == "Box")
         {
             Destroy(collision.gameObject);
+        } else if(collision.tag == "Boss")
+        {
+            collision.GetComponent<Boss>().TakeDamage(1);
         }
     }
 
