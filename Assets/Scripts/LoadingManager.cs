@@ -16,11 +16,8 @@ public class LoadingManager : Singleton<LoadingManager>
     {
         if (sceneIndex <= lastScenceIndex)
         {
-            Debug.Log(sceneIndex + 1);
-            Debug.Log(PlayerPrefs.GetInt("best_level"));
             if (sceneIndex != 0 && sceneIndex + 1 > PlayerPrefs.GetInt("best_level"))
-            {
-                
+            {         
                 PlayerPrefs.SetInt("best_level", sceneIndex+1);
             }
             SceneManager.LoadScene(++sceneIndex);    

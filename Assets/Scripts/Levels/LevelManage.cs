@@ -21,10 +21,17 @@ public class LevelManage : MonoBehaviour
         {
             if (i <= PlayerPrefs.GetInt("best_level") - 1)
             {
-                levels[i].transform.GetChild(1).gameObject.SetActive(false);
+                levels[i].transform.GetChild(1).gameObject.SetActive(false);               
+            } else
+            { 
+                levels[i].enabled = false;
+            }
+            if (i < PlayerPrefs.GetInt("best_level") - 1)
+            {
+                levels[i].transform.GetChild(2).gameObject.SetActive(true);
             } else
             {
-                levels[i].enabled = false;
+                levels[i].transform.GetChild(2).gameObject.SetActive(false);
             }
         }
     }
