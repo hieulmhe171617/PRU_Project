@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
+        Application.targetFrameRate = 120;
     }
 
     private void Update()

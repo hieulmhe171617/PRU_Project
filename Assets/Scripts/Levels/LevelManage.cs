@@ -11,7 +11,7 @@ public class LevelManage : MonoBehaviour
         {
             PlayerPrefs.SetInt("best_level", 1);
         }
-        Debug.Log(PlayerPrefs.GetInt("best_level"));
+        //Debug.Log(PlayerPrefs.GetInt("best_level"));
        
     }
 
@@ -41,8 +41,5 @@ public class LevelManage : MonoBehaviour
 
     }
     
-    void Update()
-    {
-        
-    }
+
 }

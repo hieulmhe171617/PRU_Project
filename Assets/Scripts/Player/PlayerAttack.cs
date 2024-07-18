@@ -11,12 +11,14 @@ public class PlayerAttack : MonoBehaviour
     private PlayerMovement playerMovement;
     private float cooldownTimer = 10;
     //sound
-   
+
+    private float saveStartCooldown;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
+        saveStartCooldown = attackCooldown;
     }
 
     private void Update()
@@ -53,7 +55,7 @@ public class PlayerAttack : MonoBehaviour
         return 0;
     }
 
-    public float GetStartAttackCooldown() => attackCooldown;
+    public float GetStartAttackCooldown() => saveStartCooldown;
 
     public void NewAttackCooldown(float newAttackCooldown)
     {

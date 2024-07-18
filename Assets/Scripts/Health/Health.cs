@@ -32,6 +32,9 @@ public class Health : MonoBehaviour
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
         playerRespawn = GetComponent<PlayerRespawn>();
+        //
+        Physics2D.IgnoreLayerCollision(8, 9, false);
+        invulnerable = false;
     }
 
     public void TakeDamage(float _damage)
@@ -64,11 +67,18 @@ public class Health : MonoBehaviour
                 SoundManager.instance.PlaySound(deathSound);
 
                 // Call the Respawn method from PlayerRespawn
-                Invoke("HandleRespawn", 2f); // 2 seconds delay to allow death animation to play
+                if (playerRespawn != null && playerRespawn.GetRespawnTime() >= 0)
+                {
+                    Invoke("HandleRespawn", 2f); // 2 seconds delay to allow death animation to play
+                    playerRespawn.DecreaseRespawnTime();
+                }
+
+                
             }
         }
     }
 
+    //ref above
     private void HandleRespawn()
     {
         if (playerRespawn != null)
@@ -87,7 +97,7 @@ public class Health : MonoBehaviour
         dead = false;
         AddHealth(startingHealth);
         anim.ResetTrigger("die");
-        anim.Play("Idle");
+        anim.Play("idle");
         StartCoroutine(Invunerability());
 
         foreach (Behaviour component in components)
@@ -116,5 +126,10 @@ public class Health : MonoBehaviour
     private void Deactivate()
     {
         gameObject.SetActive(false);
+    }
+
+    public void SetInvulnerable(bool newStatus)
+    {
+        invulnerable = newStatus;
     }
 }

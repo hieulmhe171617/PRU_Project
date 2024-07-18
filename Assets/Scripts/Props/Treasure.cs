@@ -13,6 +13,7 @@ public class Treasure : MonoBehaviour
     [SerializeField] private GameObject Image;
 
     private Animator animator;
+    private int pressTime = 1;
 
     private void Start()
     {
@@ -49,8 +50,16 @@ public class Treasure : MonoBehaviour
 
     public void ClickButton()
     {
-        ThankText.SetActive(false);
-        Image.SetActive(true);
-        ButtonText.text = "SIUUUU!";
+        if (pressTime == 1)
+        {
+            ThankText.SetActive(false);
+            Image.SetActive(true);
+            ButtonText.text = "SIUUUU!";
+            pressTime++;
+        } else
+        {
+            FindFirstObjectByType<LoadingManager>().DoneLastScence();
+            FindAnyObjectByType<UIManager>().BackToHome();
+        }
     }
 }

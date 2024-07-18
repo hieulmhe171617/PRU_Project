@@ -66,7 +66,7 @@ public class ParallaxController : MonoBehaviour
         for (int i = 0; i < allQuadLayers.Length; i++)
         {
             float speed = layerSpeed[i] * parallaxSpeed;
-            mat[i].SetTextureOffset("_MainTex", new Vector2(distanceX, distanceY) * speed);
+            mat[i].SetTextureOffset("_MainTex", new Vector2(distanceX, distanceY/10) * speed);
         }
 
     }

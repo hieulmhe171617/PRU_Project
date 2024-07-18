@@ -44,6 +44,14 @@ public class Projectile : MonoBehaviour
             }
         } else if (collision.tag == "Box")
         {
+            var parentObject = collision.transform.parent;
+            if (parentObject != null)
+            {
+                if (parentObject.gameObject.GetComponent<BoxItems>() != null)
+                {
+                    parentObject.gameObject.GetComponent<BoxItems>().DisplayRandomItem();
+                }
+            }
             Destroy(collision.gameObject);
         } else if(collision.tag == "Boss")
         {

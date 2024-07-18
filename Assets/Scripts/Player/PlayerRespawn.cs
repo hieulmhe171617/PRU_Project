@@ -6,9 +6,13 @@ public class PlayerRespawn : MonoBehaviour
     private Transform currentCheckpoint;
     private Health playerHealth;
 
+    [SerializeField] private int playerRespawnTime = 2;
+
+    private int saveRespawnTime;
     private void Awake()
     {
         playerHealth = GetComponent<Health>();
+        saveRespawnTime = playerRespawnTime;
     }
 
     public void Respawn()
@@ -16,8 +20,9 @@ public class PlayerRespawn : MonoBehaviour
         if (currentCheckpoint != null)
         {
             transform.position = currentCheckpoint.position;
+            playerHealth.Respawn();
         }
-        playerHealth.Respawn();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,4 +35,18 @@ public class PlayerRespawn : MonoBehaviour
             collision.GetComponent<Animator>().SetTrigger("appear");
         }
     }
+
+    public int GetRespawnTime() => playerRespawnTime;
+
+    public void DecreaseRespawnTime()
+    {
+        playerRespawnTime--;
+    }
+
+    public bool IsOver() => playerRespawnTime < 0 || (playerHealth.currentHealth <= 0 && currentCheckpoint == null);
+
+    //public void ResetRespawnTime()
+    //{
+    //    playerRespawnTime = saveRespawnTime;
+    //}
 }

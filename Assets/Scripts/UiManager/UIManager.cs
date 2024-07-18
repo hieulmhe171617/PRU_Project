@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject pausePannel;
 
-    [SerializeField] Health player;
+    [SerializeField] PlayerRespawn player;
 
     [SerializeField] GameObject gameOverPannel;
 
@@ -26,11 +26,13 @@ public class UIManager : MonoBehaviour
 
     public void RestartGame()
     {
-       int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Time.timeScale = 1f;
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
        SceneManager.LoadScene(sceneIndex);
     }
     public void BackToHome()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MenuGame");
     }
 
@@ -39,7 +41,7 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
-    bool isDead;
+ 
 
     
     public IEnumerator ShowGameOver()
@@ -47,7 +49,7 @@ public class UIManager : MonoBehaviour
        
         if (player)
         {
-            if(player.currentHealth <= 0)
+            if(player.IsOver())
             {
                 yield return new WaitForSeconds(1f);
                 Time.timeScale = 0f;
@@ -58,11 +60,11 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
-        if (player.currentHealth > 0)
+        if (player.IsOver())
         {
-            Time.timeScale = 1f;
-        }
-        StartCoroutine(ShowGameOver());
+            StartCoroutine(ShowGameOver());
+        } 
+        
     }
 
 }

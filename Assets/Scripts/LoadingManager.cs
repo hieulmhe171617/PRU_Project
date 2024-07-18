@@ -23,4 +23,9 @@ public class LoadingManager : Singleton<LoadingManager>
             SceneManager.LoadScene(++sceneIndex);    
         }
     }
+
+    public void DoneLastScence()
+    {
+        PlayerPrefs.SetInt("best_level", lastScenceIndex + 1);
+    }
 }

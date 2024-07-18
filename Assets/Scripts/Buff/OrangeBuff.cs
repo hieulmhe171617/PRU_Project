@@ -28,9 +28,19 @@ public class OrangeBuff : MonoBehaviour
     private IEnumerator BuffInvulnerable(float buffInvulnerableTime)
     {
         Physics2D.IgnoreLayerCollision(8, 10, true);
+        Physics2D.IgnoreLayerCollision(8, 9, true);
+        if (player != null)
+        {
+            player.GetComponent<Health>().SetInvulnerable(true);
+        }
         shield.SetActive(true);
         yield return new WaitForSeconds(buffInvulnerableTime);
         Physics2D.IgnoreLayerCollision(8, 10, false);
+        Physics2D.IgnoreLayerCollision(8, 9, false);
+        if (player != null)
+        {
+            player.GetComponent<Health>().SetInvulnerable(false);
+        }
         shield.SetActive(false);
 
     }

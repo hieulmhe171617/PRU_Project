@@ -34,12 +34,12 @@ public class SoundManager : Singleton<SoundManager>
     public void SetVolumeSource(float value)
     {
         source.volume = value;
-        PlayerPrefs.SetFloat("musicSound", value);
+        PlayerPrefs.SetFloat("effectSound", value);
     }
     public void SetVolumeMusic(float value)
     {
         musicSound.volume = value;
-        PlayerPrefs.SetFloat("effectSound", value);
+        PlayerPrefs.SetFloat("musicSound", value);
     }
 
 }

@@ -10,7 +10,6 @@ TagManager:
   - Door
   - Checkpoint
   - Boss
-
   layers:
   - Default
   - TransparentFX
@@ -49,16 +48,16 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 1732619637
+    uniqueID: 4031795689
     locked: 0
   - name: Foreground
-    uniqueID: 591350849
+    uniqueID: 1836389509
     locked: 0
   - name: Player
-    uniqueID: 330525473
+    uniqueID: 2967304489
     locked: 0
   - name: Ground
-    uniqueID: 2766574619
+    uniqueID: 4219477929
     locked: 0
   m_RenderingLayers:
   - Default
